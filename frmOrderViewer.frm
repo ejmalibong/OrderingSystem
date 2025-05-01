@@ -27,6 +27,7 @@ Begin VB.Form frmOrderViewer
    Moveable        =   0   'False
    ScaleHeight     =   11160
    ScaleWidth      =   20445
+   StartUpPosition =   2  'CenterScreen
    Begin VB.Frame frmTime 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
@@ -93,15 +94,15 @@ Begin VB.Form frmOrderViewer
          ForeColor       =   -2147483640
          Orientation     =   0
          Enabled         =   -1
-         Connect         =   $"frmOrderViewer.frx":0000
-         OLEDBString     =   $"frmOrderViewer.frx":00D0
+         Connect         =   "PROVIDER = MSDASQL;driver={SQL Server};database=FREEMEAL;server=192.168.20.230;uid=sa;pwd=Nbc12#;"
+         OLEDBString     =   "PROVIDER = MSDASQL;driver={SQL Server};database=FREEMEAL;server=192.168.20.230;uid=sa;pwd=Nbc12#;"
          OLEDBFile       =   ""
          DataSourceName  =   ""
          OtherAttributes =   ""
          UserName        =   ""
          Password        =   ""
-         RecordSource    =   $"frmOrderViewer.frx":01A0
-         Caption         =   "AdodcHeader"
+         RecordSource    =   $"frmOrderViewer.frx":0000
+         Caption         =   ""
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
             Size            =   15
@@ -140,15 +141,15 @@ Begin VB.Form frmOrderViewer
          ForeColor       =   -2147483640
          Orientation     =   0
          Enabled         =   -1
-         Connect         =   $"frmOrderViewer.frx":026C
-         OLEDBString     =   $"frmOrderViewer.frx":033C
+         Connect         =   "PROVIDER = MSDASQL;driver={SQL Server};database=FREEMEAL;server=192.168.20.230;uid=sa;pwd=Nbc12#;"
+         OLEDBString     =   "PROVIDER = MSDASQL;driver={SQL Server};database=FREEMEAL;server=192.168.20.230;uid=sa;pwd=Nbc12#;"
          OLEDBFile       =   ""
          DataSourceName  =   ""
          OtherAttributes =   ""
          UserName        =   ""
          Password        =   ""
-         RecordSource    =   $"frmOrderViewer.frx":040C
-         Caption         =   "AdodcHeader"
+         RecordSource    =   $"frmOrderViewer.frx":00CC
+         Caption         =   ""
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
             Size            =   15
@@ -163,7 +164,7 @@ Begin VB.Form frmOrderViewer
       Begin VB.Image imgIcon 
          Height          =   1575
          Left            =   4920
-         Picture         =   "frmOrderViewer.frx":0493
+         Picture         =   "frmOrderViewer.frx":0153
          Stretch         =   -1  'True
          Top             =   120
          Width           =   1680
@@ -360,7 +361,7 @@ Begin VB.Form frmOrderViewer
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   148045825
+         Format          =   146866177
          CurrentDate     =   45757
       End
       Begin MSComCtl2.DTPicker dtpTo 
@@ -381,7 +382,7 @@ Begin VB.Form frmOrderViewer
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   148045825
+         Format          =   146866177
          CurrentDate     =   45757
       End
       Begin VB.Label lblTo 
@@ -458,7 +459,7 @@ Begin VB.Form frmOrderViewer
       Top             =   2760
       Width           =   20450
       Begin MSDataGridLib.DataGrid dgHeader 
-         Bindings        =   "frmOrderViewer.frx":159B6
+         Bindings        =   "frmOrderViewer.frx":15676
          Height          =   7900
          Left            =   120
          TabIndex        =   17
@@ -596,7 +597,7 @@ Begin VB.Form frmOrderViewer
          EndProperty
       End
       Begin MSDataGridLib.DataGrid dgDetail 
-         Bindings        =   "frmOrderViewer.frx":159D0
+         Bindings        =   "frmOrderViewer.frx":15690
          Height          =   7905
          Left            =   9480
          TabIndex        =   18
@@ -748,7 +749,8 @@ Function GetConnection() As ADODB.Connection
     On Error GoTo ERR_HANDLER
         
     Dim cn As New ADODB.Connection
-    cn.Open "Provider=SQLNCLI11;Server=NBCP-LT-144\SQLEXPRESS;Database=FREEMEAL;Uid=sa;Pwd=Nbc12#;"
+    cn.Open "PROVIDER = MSDASQL;driver={SQL Server};database=FREEMEAL;server=192.168.20.230;uid=sa;pwd=Nbc12#;"
+    'cn.Open "PROVIDER = MSDASQL;driver={SQL Server};database=FREEMEAL;server=NBCP-LT-144;uid=sa;pwd=Nbc12#;"
     Set GetConnection = cn
     
     Exit Function
@@ -761,54 +763,60 @@ Function GetConnectionMySql() As ADODB.Connection
     On Error GoTo ERR_HANDLER
     
     Dim cn As New ADODB.Connection
-    cn.Open "Driver={MySQL ODBC 8.0 Unicode Driver};Server=localhost;Database=nbc;User=root;Password=Nbc12#;Option=3;"
+    cn.Open "Provider=MSDASQL;Driver={MySQL ODBC 8.0 ANSI Driver};Server=192.168.23.64;Database=nbc;User=root;Password=Nbc12#;Option=3;"
+    'cn.Open "Provider=MSDASQL;Driver={MySQL ODBC 8.0 ANSI Driver};Server=localhost;Database=nbc;User=root;Password=Nbc12#;Option=3;"
     Set GetConnectionMySql = cn
     
     Exit Function
     
 ERR_HANDLER:
-    MsgBox "Cannot connect to MySQL Server", vbCritical, "Database Connection Error"
+    MsgBox "Connection Error: " & Err.Description, vbCritical, "Database Connection Error"
 End Function
 
 Private Sub btnSearch_Click()
-    On Error Resume Next
+    On Error GoTo ERR_HANDLER
     
     If Format(dtpFrom.Value, "yyyy-MM-dd") > Format(dtpTo.Value, "yyyy-MM-dd") Then
-        MsgBox "Start date is later than to end date.", vbCritical, "Incorrect Date Range"
+        MsgBox "Start date is later than end date.", vbCritical, "Incorrect Date Range"
         dtpFrom.Value = DateAdd("d", -30, Now)
         dtpTo.Value = Now
         Exit Sub
     End If
 
+    Dim cn As ADODB.Connection
+    Dim rs As ADODB.Recordset
     Dim sqlRdHeader As String
     
-    Dim cn As ADODB.Connection
     Set cn = GetConnection()
-    
-    sqlRdHeader = "SELECT [REFID], [DATE], CAST([TIME] AS VARCHAR(5)) AS OrderTime, [TOTAL_PRICE], [STATUS] FROM [FREEMEAL].[dbo].[TBL_FRUITS_RECORDS] WHERE " & _
-                  " CAST([DATE] AS DATE) BETWEEN '" & Format(dtpFrom.Value, "yyyy-MM-dd") & "' AND '" & Format(dtpTo.Value, "yyyy-MM-dd") & "' AND " & _
-                  " [REGISTERED_ID] = '" & GetId & "'" & _
-                  " ORDER BY CAST([DATE] AS DATE) ASC, CAST([TIME] AS VARCHAR(5)) ASC "
-                
-    AdodcHeader.RecordSource = sqlRdHeader
-    AdodcHeader.Refresh
-    
-    Set dgHeader.DataSource = AdodcHeader
+    Set rs = New ADODB.Recordset
+
+    sqlRdHeader = "SELECT [REFID], [DATE], CAST([TIME] AS VARCHAR(5)) AS OrderTime, [TOTAL_PRICE], [STATUS] " & _
+                  "FROM [FREEMEAL].[dbo].[TBL_FRUITS_RECORDS] WHERE " & _
+                  "CAST([DATE] AS DATE) BETWEEN '" & Format(dtpFrom.Value, "yyyy-MM-dd") & "' AND '" & Format(dtpTo.Value, "yyyy-MM-dd") & "' AND " & _
+                  "[REGISTERED_ID] = '" & GetId & "' " & _
+                  "ORDER BY CAST([DATE] AS DATE) ASC, CAST([TIME] AS VARCHAR(5)) ASC"
+
+    rs.Open sqlRdHeader, cn, adOpenStatic, adLockReadOnly
     
     If AdodcHeader.Recordset.EOF Then
         MsgBox "No records found", vbCritical, "No Records"
+        Set dgHeader.DataSource = Nothing
     Else
-        AdodcHeader.Recordset.MoveFirst
+        Set dgHeader.DataSource = rs
+        rs.MoveFirst
         dgHeader.Row = 0
         dgHeader.Col = 0
-        dgHeader_Click ' simulate click if needed
+        dgHeader_Click
         dgHeader.SetFocus
     End If
     
+    Set rs = Nothing
     cn.Close
     Set cn = Nothing
-    
-    On Error GoTo 0
+    Exit Sub
+
+ERR_HANDLER:
+    MsgBox "Error: " & Err.Description, vbCritical, "Search Error"
 End Sub
 
 Private Sub dgHeader_Click()
@@ -855,8 +863,34 @@ End Sub
 Private Sub Form_Load()
     On Error Resume Next
     
-    dtpFrom.Value = DateAdd("d", -30, Now)
-    dtpTo.Value = Now
+    Dim cnn As ADODB.Connection
+    Dim rs As ADODB.Recordset
+    Dim sql As String
+    Dim serverNow As Date
+    
+    ' Get current server date/time directly
+    Set cnn = GetConnection()
+    sql = "SELECT GETDATE() AS ServerTime"
+    
+    Set rs = New ADODB.Recordset
+    rs.Open sql, cnn, adOpenStatic, adLockReadOnly
+    
+    If Not rs.EOF Then
+        serverNow = rs!ServerTime
+    Else
+        serverNow = Now ' fallback
+    End If
+    
+    rs.Close
+    cnn.Close
+    Set rs = Nothing
+    Set cnn = Nothing
+    
+    ' Set dtpFrom to 1st day of current month
+    dtpFrom.Value = DateSerial(Year(serverNow), Month(serverNow), 1)
+
+    ' Set dtpTo to last day of current month
+    dtpTo.Value = DateSerial(Year(serverNow), Month(serverNow) + 1, 0)
     
     Dim sqlRdHeader As String
     
@@ -906,10 +940,10 @@ Private Sub txtTimer_Timer()
 
     ' Check if data is returned
     If Not rs.EOF Then
-        lblDate.Caption = Format(rs!ServerTime, "MMMM dd, yyyy")  ' Ensure lowercase `dd`
+        lblDate.Caption = Format(rs!ServerTime, "MMMM dd, yyyy")  ' Ensure lowercase dd
         lblTime.Caption = Format(rs!ServerTime, "hh:nn AM/PM")
     End If
-
+    
     ' Cleanup
     rs.Close
     cn.Close

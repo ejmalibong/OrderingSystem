@@ -24,6 +24,7 @@ Begin VB.Form frmMainMenu
    Moveable        =   0   'False
    ScaleHeight     =   11160
    ScaleWidth      =   20445
+   StartUpPosition =   2  'CenterScreen
    Begin VB.Frame frmeConfirmation 
       Height          =   2535
       Left            =   3360
@@ -433,6 +434,234 @@ Begin VB.Form frmMainMenu
       TabIndex        =   2
       Top             =   2760
       Width           =   20450
+      Begin VB.Label lblMinusQty4 
+         Alignment       =   2  'Center
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000000&
+         BorderStyle     =   1  'Fixed Single
+         Caption         =   "-"
+         BeginProperty Font 
+            Name            =   "Times New Roman"
+            Size            =   26.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000008&
+         Height          =   645
+         Left            =   10050
+         TabIndex        =   85
+         Top             =   7465
+         Width           =   1200
+      End
+      Begin VB.Label lblMinusQty2 
+         Alignment       =   2  'Center
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000000&
+         BorderStyle     =   1  'Fixed Single
+         Caption         =   "-"
+         BeginProperty Font 
+            Name            =   "Times New Roman"
+            Size            =   26.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000008&
+         Height          =   645
+         Left            =   3210
+         TabIndex        =   84
+         Top             =   7465
+         Width           =   1200
+      End
+      Begin VB.Label lblMinusQty5 
+         Alignment       =   2  'Center
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000000&
+         BorderStyle     =   1  'Fixed Single
+         Caption         =   "-"
+         BeginProperty Font 
+            Name            =   "Times New Roman"
+            Size            =   26.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000008&
+         Height          =   645
+         Left            =   16830
+         TabIndex        =   83
+         Top             =   3780
+         Width           =   1200
+      End
+      Begin VB.Label lblMinusQty3 
+         Alignment       =   2  'Center
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000000&
+         BorderStyle     =   1  'Fixed Single
+         Caption         =   "-"
+         BeginProperty Font 
+            Name            =   "Times New Roman"
+            Size            =   26.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000008&
+         Height          =   645
+         Left            =   10050
+         TabIndex        =   82
+         Top             =   3780
+         Width           =   1200
+      End
+      Begin VB.Label lblMinusQty1 
+         Alignment       =   2  'Center
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000000&
+         BorderStyle     =   1  'Fixed Single
+         Caption         =   "-"
+         BeginProperty Font 
+            Name            =   "Times New Roman"
+            Size            =   26.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000008&
+         Height          =   650
+         Left            =   3210
+         TabIndex        =   81
+         Top             =   3780
+         Width           =   1200
+      End
+      Begin VB.Label lblAddQty4 
+         Alignment       =   2  'Center
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000000&
+         BorderStyle     =   1  'Fixed Single
+         Caption         =   "+"
+         BeginProperty Font 
+            Name            =   "Times New Roman"
+            Size            =   26.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000008&
+         Height          =   650
+         Left            =   10050
+         TabIndex        =   80
+         Top             =   4475
+         Width           =   1200
+      End
+      Begin VB.Label lblAddQty2 
+         Alignment       =   2  'Center
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000000&
+         BorderStyle     =   1  'Fixed Single
+         Caption         =   "+"
+         BeginProperty Font 
+            Name            =   "Times New Roman"
+            Size            =   26.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000008&
+         Height          =   650
+         Left            =   3210
+         TabIndex        =   79
+         Top             =   4475
+         Width           =   1200
+      End
+      Begin VB.Label lblAddQty5 
+         Alignment       =   2  'Center
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000000&
+         BorderStyle     =   1  'Fixed Single
+         Caption         =   "+"
+         BeginProperty Font 
+            Name            =   "Times New Roman"
+            Size            =   26.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000008&
+         Height          =   650
+         Left            =   16830
+         TabIndex        =   78
+         Top             =   780
+         Width           =   1200
+      End
+      Begin VB.Label lblAddQty3 
+         Alignment       =   2  'Center
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000000&
+         BorderStyle     =   1  'Fixed Single
+         Caption         =   "+"
+         BeginProperty Font 
+            Name            =   "Times New Roman"
+            Size            =   26.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000008&
+         Height          =   650
+         Left            =   10050
+         TabIndex        =   77
+         Top             =   780
+         Width           =   1200
+      End
+      Begin VB.Label lblAddQty1 
+         Alignment       =   2  'Center
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000000&
+         BorderStyle     =   1  'Fixed Single
+         Caption         =   "+"
+         BeginProperty Font 
+            Name            =   "Times New Roman"
+            Size            =   26.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000008&
+         Height          =   650
+         Left            =   3210
+         TabIndex        =   76
+         Top             =   780
+         Width           =   1200
+      End
+      Begin VB.Image imgProduct5 
+         Height          =   2655
+         Left            =   13880
+         Picture         =   "frmMainMenu.frx":15523
+         Stretch         =   -1  'True
+         Top             =   1680
+         Width           =   2850
+      End
       Begin VB.Label lblPhp5 
          Alignment       =   2  'Center
          Appearance      =   0  'Flat
@@ -452,7 +681,7 @@ Begin VB.Form frmMainMenu
          Height          =   495
          Left            =   18700
          TabIndex        =   67
-         Top             =   2880
+         Top             =   2800
          Width           =   975
          WordWrap        =   -1  'True
       End
@@ -475,7 +704,7 @@ Begin VB.Form frmMainMenu
          Height          =   885
          Left            =   18450
          TabIndex        =   66
-         Top             =   1440
+         Top             =   1600
          Width           =   1440
          WordWrap        =   -1  'True
       End
@@ -497,7 +726,7 @@ Begin VB.Form frmMainMenu
          Height          =   495
          Left            =   17100
          TabIndex        =   65
-         Top             =   2880
+         Top             =   2800
          Width           =   645
          WordWrap        =   -1  'True
       End
@@ -520,7 +749,7 @@ Begin VB.Form frmMainMenu
          Height          =   885
          Left            =   17080
          TabIndex        =   64
-         Top             =   1440
+         Top             =   1600
          Width           =   735
          WordWrap        =   -1  'True
       End
@@ -573,7 +802,7 @@ Begin VB.Form frmMainMenu
          Appearance      =   0  'Flat
          AutoSize        =   -1  'True
          BackColor       =   &H80000005&
-         Caption         =   "Php 40.00"
+         Caption         =   "Php 25.00"
          BeginProperty Font 
             Name            =   "Calibri"
             Size            =   20.25
@@ -585,19 +814,11 @@ Begin VB.Form frmMainMenu
          EndProperty
          ForeColor       =   &H80000008&
          Height          =   495
-         Left            =   14160
+         Left            =   14115
          TabIndex        =   61
-         Top             =   1180
-         Width           =   2385
+         Top             =   1185
+         Width           =   2475
          WordWrap        =   -1  'True
-      End
-      Begin VB.Image imgProduct5 
-         Height          =   2655
-         Left            =   13880
-         Picture         =   "frmMainMenu.frx":15523
-         Stretch         =   -1  'True
-         Top             =   1680
-         Width           =   2850
       End
       Begin VB.Label lblPhp4 
          Alignment       =   2  'Center
@@ -618,7 +839,7 @@ Begin VB.Form frmMainMenu
          Height          =   495
          Left            =   11900
          TabIndex        =   60
-         Top             =   6600
+         Top             =   6520
          Width           =   975
          WordWrap        =   -1  'True
       End
@@ -641,7 +862,7 @@ Begin VB.Form frmMainMenu
          Height          =   885
          Left            =   11700
          TabIndex        =   59
-         Top             =   5040
+         Top             =   5200
          Width           =   1440
          WordWrap        =   -1  'True
       End
@@ -664,7 +885,7 @@ Begin VB.Form frmMainMenu
          Height          =   495
          Left            =   11900
          TabIndex        =   58
-         Top             =   2880
+         Top             =   2800
          Width           =   975
          WordWrap        =   -1  'True
       End
@@ -687,7 +908,7 @@ Begin VB.Form frmMainMenu
          Height          =   885
          Left            =   11700
          TabIndex        =   57
-         Top             =   1440
+         Top             =   1600
          Width           =   1440
          WordWrap        =   -1  'True
       End
@@ -753,7 +974,7 @@ Begin VB.Form frmMainMenu
          Height          =   495
          Left            =   10250
          TabIndex        =   54
-         Top             =   6600
+         Top             =   6520
          Width           =   645
          WordWrap        =   -1  'True
       End
@@ -776,7 +997,7 @@ Begin VB.Form frmMainMenu
          Height          =   885
          Left            =   10260
          TabIndex        =   53
-         Top             =   5040
+         Top             =   5200
          Width           =   735
          WordWrap        =   -1  'True
       End
@@ -798,7 +1019,7 @@ Begin VB.Form frmMainMenu
          Height          =   495
          Left            =   10250
          TabIndex        =   52
-         Top             =   2880
+         Top             =   2800
          Width           =   645
          WordWrap        =   -1  'True
       End
@@ -821,7 +1042,7 @@ Begin VB.Form frmMainMenu
          Height          =   885
          Left            =   10260
          TabIndex        =   51
-         Top             =   1440
+         Top             =   1600
          Width           =   885
          WordWrap        =   -1  'True
       End
@@ -872,7 +1093,7 @@ Begin VB.Form frmMainMenu
       Begin VB.Image imgProduct4 
          Height          =   2655
          Left            =   7080
-         Picture         =   "frmMainMenu.frx":20155
+         Picture         =   "frmMainMenu.frx":18DA6
          Stretch         =   -1  'True
          Top             =   5400
          Width           =   2850
@@ -903,7 +1124,7 @@ Begin VB.Form frmMainMenu
       Begin VB.Image imgProduct3 
          Height          =   2655
          Left            =   7080
-         Picture         =   "frmMainMenu.frx":2457D
+         Picture         =   "frmMainMenu.frx":1D1CE
          Stretch         =   -1  'True
          Top             =   1680
          Width           =   2850
@@ -936,7 +1157,7 @@ Begin VB.Form frmMainMenu
          Appearance      =   0  'Flat
          BackColor       =   &H80000005&
          BorderStyle     =   1  'Fixed Single
-         Caption         =   "Small Tub (150g)"
+         Caption         =   "Small Tub (150 g.)"
          BeginProperty Font 
             Name            =   "Calibri"
             Size            =   18
@@ -959,7 +1180,7 @@ Begin VB.Form frmMainMenu
          Appearance      =   0  'Flat
          BackColor       =   &H80000005&
          BorderStyle     =   1  'Fixed Single
-         Caption         =   "Smoothie (10oz)"
+         Caption         =   "Smoothie (10 oz.)"
          BeginProperty Font 
             Name            =   "Calibri"
             Size            =   18
@@ -982,7 +1203,7 @@ Begin VB.Form frmMainMenu
          Appearance      =   0  'Flat
          BackColor       =   &H80000005&
          BorderStyle     =   1  'Fixed Single
-         Caption         =   "Small Bowl (150g)"
+         Caption         =   "Small Bowl (150 g.)"
          BeginProperty Font 
             Name            =   "Calibri"
             Size            =   18
@@ -1019,7 +1240,7 @@ Begin VB.Form frmMainMenu
          Height          =   495
          Left            =   5000
          TabIndex        =   43
-         Top             =   6600
+         Top             =   6520
          Width           =   975
          WordWrap        =   -1  'True
       End
@@ -1042,7 +1263,7 @@ Begin VB.Form frmMainMenu
          Height          =   885
          Left            =   3420
          TabIndex        =   41
-         Top             =   5040
+         Top             =   5200
          Width           =   795
          WordWrap        =   -1  'True
       End
@@ -1064,7 +1285,7 @@ Begin VB.Form frmMainMenu
          Height          =   495
          Left            =   3450
          TabIndex        =   40
-         Top             =   6600
+         Top             =   6520
          Width           =   645
          WordWrap        =   -1  'True
       End
@@ -1116,7 +1337,7 @@ Begin VB.Form frmMainMenu
       Begin VB.Image imgProduct2 
          Height          =   2655
          Left            =   240
-         Picture         =   "frmMainMenu.frx":31C30
+         Picture         =   "frmMainMenu.frx":2A881
          Stretch         =   -1  'True
          Top             =   5400
          Width           =   2850
@@ -1126,7 +1347,7 @@ Begin VB.Form frmMainMenu
          Appearance      =   0  'Flat
          BackColor       =   &H80000005&
          BorderStyle     =   1  'Fixed Single
-         Caption         =   "Medium Tub (100g)"
+         Caption         =   "Medium (100 g.)"
          BeginProperty Font 
             Name            =   "Calibri"
             Size            =   18
@@ -1265,7 +1486,7 @@ Begin VB.Form frmMainMenu
          BackColor       =   &H80000005&
          BackStyle       =   0  'Transparent
          BorderStyle     =   1  'Fixed Single
-         Caption         =   "MIXED FRUITS"
+         Caption         =   "MIX FRUITS"
          BeginProperty Font 
             Name            =   "Calibri"
             Size            =   18
@@ -1344,7 +1565,7 @@ Begin VB.Form frmMainMenu
          Height          =   885
          Left            =   3420
          TabIndex        =   20
-         Top             =   1440
+         Top             =   1600
          Width           =   825
          WordWrap        =   -1  'True
       End
@@ -1408,7 +1629,7 @@ Begin VB.Form frmMainMenu
          Height          =   495
          Left            =   5000
          TabIndex        =   11
-         Top             =   2880
+         Top             =   2800
          Width           =   975
          WordWrap        =   -1  'True
       End
@@ -1430,14 +1651,14 @@ Begin VB.Form frmMainMenu
          Height          =   495
          Left            =   3450
          TabIndex        =   10
-         Top             =   2880
+         Top             =   2800
          Width           =   645
          WordWrap        =   -1  'True
       End
       Begin VB.Image imgProduct1 
          Height          =   2655
          Left            =   240
-         Picture         =   "frmMainMenu.frx":3E392
+         Picture         =   "frmMainMenu.frx":36FE3
          Stretch         =   -1  'True
          Top             =   1680
          Width           =   2850
@@ -1507,7 +1728,7 @@ Begin VB.Form frmMainMenu
          Height          =   885
          Left            =   4665
          TabIndex        =   6
-         Top             =   1440
+         Top             =   1600
          Width           =   1680
          WordWrap        =   -1  'True
       End
@@ -1554,7 +1775,7 @@ Begin VB.Form frmMainMenu
          Height          =   885
          Left            =   4515
          TabIndex        =   8
-         Top             =   5040
+         Top             =   5200
          Width           =   1980
          WordWrap        =   -1  'True
       End
@@ -1608,7 +1829,7 @@ Begin VB.Form frmMainMenu
          Appearance      =   0  'Flat
          BackColor       =   &H80000005&
          BorderStyle     =   1  'Fixed Single
-         Caption         =   "Small Tub (50g)"
+         Caption         =   "Small (50 g.)"
          BeginProperty Font 
             Name            =   "Calibri"
             Size            =   18
@@ -1671,7 +1892,7 @@ Begin VB.Form frmMainMenu
          WordWrap        =   -1  'True
       End
       Begin VB.Label lblNote2 
-         Caption         =   "Each products maximum order quantity is 2."
+         Caption         =   "Each products maximum order quantity is 1."
          BeginProperty Font 
             Name            =   "Arial"
             Size            =   14.25
@@ -1888,6 +2109,46 @@ Private Sub imgProduct1_Click()
     UpdateProductTotal 1, txtQty1, txtPrice1
 End Sub
 
+Private Sub lblAddQty1_Click()
+    UpdateProductTotal 1, txtQty1, txtPrice1
+End Sub
+
+Private Sub lblAddQty2_Click()
+    UpdateProductTotal 2, txtQty2, txtPrice2
+End Sub
+
+Private Sub lblAddQty3_Click()
+    UpdateProductTotal 3, txtQty3, txtPrice3
+End Sub
+
+Private Sub lblAddQty4_Click()
+    UpdateProductTotal 4, txtQty4, txtPrice4
+End Sub
+
+Private Sub lblAddQty5_Click()
+    UpdateProductTotal 5, txtQty5, txtPrice5
+End Sub
+
+Private Sub lblMinusQty1_Click()
+    UpdateProductTotalMinus 1, txtQty1, txtPrice1
+End Sub
+
+Private Sub lblMinusQty2_Click()
+    UpdateProductTotalMinus 2, txtQty2, txtPrice2
+End Sub
+
+Private Sub lblMinusQty3_Click()
+    UpdateProductTotalMinus 3, txtQty3, txtPrice3
+End Sub
+
+Private Sub lblMinusQty4_Click()
+    UpdateProductTotalMinus 4, txtQty4, txtPrice4
+End Sub
+
+Private Sub lblMinusQty5_Click()
+    UpdateProductTotalMinus 5, txtQty5, txtPrice5
+End Sub
+
 Private Sub lblProduct1Pnl1_Click()
     UpdateProductTotal 1, txtQty1, txtPrice1
 End Sub
@@ -1945,7 +2206,7 @@ Private Sub lblProductPrice5_Click()
 End Sub
 
 Private Sub txtRegisteredId_KeyPress(KeyAscii As Integer)
-    On Error Resume Next
+    On Error GoTo errHandler
     
     If Not KeyAscii = 13 Then
         Exit Sub
@@ -1970,9 +2231,6 @@ Private Sub txtRegisteredId_KeyPress(KeyAscii As Integer)
         MsgBox "Employee ID is not registered. Please go to HR for registration.", vbCritical, "Registration Error"
         btnCancelScanning_Click
         
-        rsRdRfid.Close
-        Set rsRdRfid = Nothing
-        
         txtRegisteredId.Text = ""
         
         'Cleanup
@@ -1989,7 +2247,7 @@ Private Sub txtRegisteredId_KeyPress(KeyAscii As Integer)
         Me.Hide
         frmOrderViewer.SetId = Trim(txtRegisteredId.Text)
         frmOrderViewer.Show
-        
+ 
         txtRegisteredId.Text = ""
                 
     'Opened thru order creation button
@@ -2099,7 +2357,10 @@ Private Sub txtRegisteredId_KeyPress(KeyAscii As Integer)
         Set cn = Nothing
     End If
     
-    On Error GoTo 0
+    Exit Sub
+    
+errHandler:
+    MsgBox "Form_Load error: " & Err.Description, vbCritical, "Form Load Failed"
 End Sub
 
 Private Sub txtTimer_Timer()
@@ -2135,7 +2396,7 @@ Private Sub txtTimer_Timer()
 End Sub
 
 Private Sub CheckLabel(txt As Label, lbl As Label)
-    If Trim(txt.Caption) = "" Then
+    If Trim(txt.Caption) = "" Or val(txt.Caption) = 0 Then
         lbl.Visible = False
         txt.Visible = False
     Else
@@ -2193,13 +2454,58 @@ Private Sub UpdateProductTotal(productId As Integer, txtQty As Object, txtPrice 
     Dim price As Double
 
     ' Ensure the quantity doesn't exceed the limit
-    If val(txtQty) >= 2 Then
-        MsgBox "You have reached the maximum quantity (2) per product." & vbNewLine & "Please try other products.", vbCritical, "Order Limit Reached"
+    If val(txtQty) >= 1 Then
+        MsgBox "You have reached the maximum quantity (1) per product." & vbNewLine & "Please try other products.", vbCritical, "Order Limit Reached"
         Exit Sub
     End If
     
     ' Increase the quantity
     txtQty = val(txtQty) + 1
+
+    ' Initialize database connection
+    Set cn = GetConnection()
+    sqlRdPrice = "SELECT [Price] FROM [FREEMEAL].[dbo].[TBL_FRUITS_PRICELIST] WHERE [ProductId] = " & productId
+
+    ' Execute query
+    Set rsPrice = New ADODB.Recordset
+    rsPrice.Open sqlRdPrice, cn, adOpenStatic, adLockReadOnly
+
+    ' Check if product has a price
+    If rsPrice.EOF Or IsNull(rsPrice!price) Then
+        MsgBox "Product does not have a price." & vbNewLine & "Please try other products.", vbCritical, "No Price"
+        txtQty = ""
+    Else
+        price = rsPrice!price
+        txtPrice.Caption = Format(price * val(txtQty), "0.00") ' Format with 2 decimal places
+    End If
+
+    ' Cleanup
+    rsPrice.Close
+    cn.Close
+    Set rsPrice = Nothing
+    Set cn = Nothing
+
+    ' Compute the grand total
+    ComputeGrandTotal
+
+    On Error GoTo 0
+End Sub
+
+Private Sub UpdateProductTotalMinus(productId As Integer, txtQty As Object, txtPrice As Object)
+    On Error Resume Next
+
+    Dim cn As ADODB.Connection
+    Dim rsPrice As ADODB.Recordset
+    Dim sqlRdPrice As String
+    Dim price As Double
+
+    ' Ensure the quantity doesn't exceed the limit
+    If val(txtQty) = 0 Then
+        Exit Sub
+    End If
+    
+    ' Increase the quantity
+    txtQty = val(txtQty) - 1
 
     ' Initialize database connection
     Set cn = GetConnection()
@@ -2277,7 +2583,8 @@ Function GetConnection() As ADODB.Connection
     On Error GoTo ERR_HANDLER
         
     Dim cn As New ADODB.Connection
-    cn.Open "Provider=SQLNCLI11;Server=NBCP-LT-144\SQLEXPRESS;Database=FREEMEAL;Uid=sa;Pwd=Nbc12#;"
+    cn.Open "PROVIDER = MSDASQL;driver={SQL Server};database=FREEMEAL;server=192.168.20.230;uid=sa;pwd=Nbc12#;"
+    'cn.Open "PROVIDER = MSDASQL;driver={SQL Server};database=FREEMEAL ;server=NBCP-LT-144;uid=sa;pwd=Nbc12#;"
     Set GetConnection = cn
     
     Exit Function
@@ -2290,11 +2597,12 @@ Function GetConnectionMySql() As ADODB.Connection
     On Error GoTo ERR_HANDLER
     
     Dim cn As New ADODB.Connection
-    cn.Open "Driver={MySQL ODBC 8.0 Unicode Driver};Server=localhost;Database=nbc;User=root;Password=Nbc12#;Option=3;"
+    cn.Open "Provider=MSDASQL;Driver={MySQL ODBC 8.0 ANSI Driver};Server=192.168.23.64;Database=nbc;User=root;Password=Nbc12#;Option=3;"
+    'cn.Open "Provider=MSDASQL;Driver={MySQL ODBC 8.0 ANSI Driver};Server=localhost;Database=nbc;User=root;Password=Nbc12#;Option=3;"
     Set GetConnectionMySql = cn
     
     Exit Function
     
 ERR_HANDLER:
-    MsgBox "Cannot connect to MySQL Server", vbCritical, "Database Connection Error"
+    MsgBox "Connection Error: " & Err.Description, vbCritical, "Database Connection Error"
 End Function
